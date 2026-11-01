@@ -1,9 +1,9 @@
 --[[
 ══════════════════════════════════════════════════════════════════
 Neo's Hub v4.0 — Universal Roblox Menu
-Author: @mrneoner
-Discord: mrneoner | Telegram: wantpepa
-GitHub: mrneoner1337 | Roblox: LegoSurgeon
+Author: @power_gost
+Discord: amir_fps | Telegram: power_gost
+GitHub: amir_fps | Roblox: amir_fps17
 ══════════════════════════════════════════════════════════════════
 ]]--
 
@@ -17,7 +17,7 @@ if not _G.NesficateHubSource then
 end
 
 pcall(function()
-    local ConfigDir = "NeoHub"
+    local ConfigDir = "VOID HUB"
     if not isfolder(ConfigDir) then makefolder(ConfigDir) end
     writefile(ConfigDir.."/reload_source.txt", _G.NesficateHubSource)
 end)
@@ -62,7 +62,7 @@ local flyKeyUp = nil
 -- ═══════════════════════════════════════════
 local Langs = {
     EN = {
-        hub_name = "Neo's Hub",
+        hub_name = "VOID Hub",
         version = "v4.0 — Universal Menu",
         loading = "Loading...",
         loading_init = "Initializing modules...",
@@ -319,7 +319,7 @@ local Langs = {
         drunk = "Drunk Walk"
     },
     RU = {
-        hub_name = "Neo's Hub",
+        hub_name = "VOID Hub",
         version = "v4.0 — Универсальное меню",
         loading = "Загрузка...",
         loading_init = "Инициализация модулей...",
@@ -576,7 +576,7 @@ local Langs = {
         random_tp = "Рандом телепорт"
     },
     JP = {
-        hub_name = "Neo's Hub",
+        hub_name = "VOID Hub",
         version = "v4.0 — ユニバーサルメニュー",
         loading = "読み込み中...",
         loading_init = "モジュールを初期化中...",
@@ -833,7 +833,7 @@ local Langs = {
         random_tp = "ランダムテレポート"
     },
     ES = {
-        hub_name = "Neo's Hub",
+        hub_name = "VOID Hub",
         version = "v4.0 — Menú Universal",
         loading = "Cargando...",
         loading_init = "Inicializando módulos...",
@@ -2700,7 +2700,7 @@ Create("TextLabel", {Size = UDim2.new(1, -78, 0, 16), Position = UDim2.new(0, 74
 local statusLabel = Create("TextLabel", {Size = UDim2.new(0, 80, 0, 16), Position = UDim2.new(0, 74, 0, 52), BackgroundTransparency = 1, Text = "Active", TextColor3 = TC(S.Theme.Accent), Font = Enum.Font.GothamBold, TextSize = 11, TextXAlignment = Enum.TextXAlignment.Left, Parent = ProfFrame})
 
 if HUB_STATUS == "work" then
-    statusLabel.Text = "Working"
+    statusLabel.Text = "VOID"
     task.spawn(function() 
         while statusLabel.Parent do 
             local hue = (tick() * 0.3) % 1
@@ -2843,7 +2843,7 @@ Create("UIGradient", {Color = ColorSequence.new({ColorSequenceKeypoint.new(0, TC
 
 Create("TextLabel", {
     Size = UDim2.new(1, -40, 0, 40), Position = UDim2.new(0, 20, 0.2, 0), BackgroundTransparency = 1,
-    Text = "✨ Welcome to Neo's Hub ✨", TextColor3 = TC(S.Theme.Accent), Font = Enum.Font.GothamBlack, TextSize = 32, TextXAlignment = Enum.TextXAlignment.Center, Parent = WelcomeOverlay
+    Text = "✨ Welcome to VOID Hub ✨", TextColor3 = TC(S.Theme.Accent), Font = Enum.Font.GothamBlack, TextSize = 32, TextXAlignment = Enum.TextXAlignment.Center, Parent = WelcomeOverlay
 })
 
 local WelcomeCard = Create("Frame", {
@@ -4904,12 +4904,12 @@ do
     
     local banner = Create("Frame", {Size = UDim2.new(1, 0, 0, 100), BackgroundColor3 = TC(S.Theme.Card), BorderSizePixel = 0, Parent = p}); banner:SetAttribute("OrigBT", 0); Corner(banner, 12)
     Create("UIGradient", {Color = ColorSequence.new({ColorSequenceKeypoint.new(0, TC(S.Theme.Accent)), ColorSequenceKeypoint.new(0.6, Color3.fromRGB(30, 25, 50)), ColorSequenceKeypoint.new(1, TC(S.Theme.Card))}), Rotation = 25, Parent = banner})
-    Create("TextLabel", {Size = UDim2.new(1, 0, 0, 36), Position = UDim2.new(0, 0, 0, 12), BackgroundTransparency = 1, Text = "✨ Neo's Hub ✨", TextColor3 = Color3.new(1, 1, 1), Font = Enum.Font.GothamBlack, TextSize = 26, Parent = banner}):SetAttribute("OrigTT", 0)
+    Create("TextLabel", {Size = UDim2.new(1, 0, 0, 36), Position = UDim2.new(0, 0, 0, 12), BackgroundTransparency = 1, Text = "✨ VOID Hub ✨", TextColor3 = Color3.new(1, 1, 1), Font = Enum.Font.GothamBlack, TextSize = 26, Parent = banner}):SetAttribute("OrigTT", 0)
     Create("TextLabel", {Size = UDim2.new(1, 0, 0, 18), Position = UDim2.new(0, 0, 0, 48), BackgroundTransparency = 1, Text = L("version"), TextColor3 = Color3.fromRGB(200, 200, 220), Font = Enum.Font.GothamBold, TextSize = 13, Parent = banner}):SetAttribute("OrigTT", 0)
     Create("TextLabel", {Size = UDim2.new(1, 0, 0, 14), Position = UDim2.new(0, 0, 0, 70), BackgroundTransparency = 1, Text = L("made_with"), TextColor3 = Color3.fromRGB(160, 160, 180), Font = Enum.Font.GothamMedium, TextSize = 11, Parent = banner}):SetAttribute("OrigTT", 0)
 
     Section(p, L("developer"))
-    local links = {{"💬 Discord", "mrneoner"}, {"📱 Telegram", "@wantpepa"}, {"🐙 GitHub", "mrneoner1337"}, {"🎮 Roblox", "LegoSurgeon"}}
+    local links = {{"💬 Discord", "amir_fps"}, {"📱 Telegram", "@power_gost"}, {"🐙 GitHub", "amir_fps"}, {"🎮 Roblox", "amir_fps17"}}
     for _, s2 in ipairs(links) do
         local card = Create("Frame", {Size = UDim2.new(1, 0, 0, 40), BackgroundColor3 = TC(S.Theme.Card), BorderSizePixel = 0, Parent = p}); card:SetAttribute("OrigBT", 0); Corner(card, 10)
         Create("TextLabel", {Size = UDim2.new(0.45, 0, 1, 0), Position = UDim2.new(0, 14, 0, 0), BackgroundTransparency = 1, Text = s2[1], TextColor3 = TC(S.Theme.SubText), Font = Enum.Font.GothamBold, TextSize = 13, TextXAlignment = Enum.TextXAlignment.Left, Parent = card}):SetAttribute("OrigTT", 0)
@@ -5091,8 +5091,8 @@ Notify("Neo's Hub v4.0", string.format(L("toggle_hint"), S.Keybinds.ToggleMenu o
 
 print("======================================")
 print(" Neo's Hub v4.0 - Loaded!")
-print(" @mrneoner | Discord: mrneoner")
-print(" Telegram: wantpepa")
-print(" GitHub: mrneoner1337")
-print(" Roblox: LegoSurgeon")
+print(" @power_gost | Discord: amir_fps")
+print(" Telegram: power_gost")
+print(" GitHub: amir_fps")
+print(" Roblox: amir_fps17")
 print("======================================")
