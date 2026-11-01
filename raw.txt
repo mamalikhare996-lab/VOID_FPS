@@ -1,0 +1,305 @@
+-- // HubbyX: Admin Panel with Rayfield UI
+
+-- // Made for RAYFIELD + HubbyX
+
+-- // Load Rayfield
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- // Window
+
+local Window = Rayfield:CreateWindow({
+
+    Name = "HubbyX: Admin Panel",
+
+    LoadingTitle = "Loading HubbyX...",
+
+    LoadingSubtitle = "by RAYFIELD",
+
+    ConfigurationSaving = {
+
+        Enabled = true,
+
+        FolderName = "HubbyXAdmin",
+
+        FileName = "AdminConfig"
+
+    }
+
+})
+
+-- // Tabs
+
+local NormalTab = Window:CreateTab("Normal Tab", 4483362458)
+
+local VIPTab = Window:CreateTab("VIP Tab", 4483362458)
+
+local AdminTab = Window:CreateTab("Admin Tab", 4483362458)
+
+local HeadAdminTab = Window:CreateTab("HeadAdmin Tab", 4483362458)
+
+local OwnerTab = Window:CreateTab("Owner Tab", 4483362458)
+
+local UltraTab = Window:CreateTab("Ultra+ Tab", 4483362458)
+
+-- // Normal Tab
+
+NormalTab:CreateButton({
+
+    Name = "Check FPS",
+
+    Callback = function()
+
+        local fps = math.floor(1 / game:GetService("RunService").RenderStepped:Wait())
+
+        game.StarterGui:SetCore("SendNotification", {Title="RAYFIELD BADGE", Text="FPS: "..fps})
+
+    end
+
+})
+
+NormalTab:CreateButton({
+
+    Name = "Check Ping",
+
+    Callback = function()
+
+        local ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+
+        game.StarterGui:SetCore("SendNotification", {Title="RAYFIELD BADGE", Text="Ping: "..ping})
+
+    end
+
+})
+
+-- // VIP Tab
+
+local Freeze = false
+
+VIPTab:CreateToggle({
+
+    Name = "Freeze Player",
+
+    CurrentValue = false,
+
+    Callback = function(Value)
+
+        Freeze = Value
+
+        local char = game.Players.LocalPlayer.Character
+
+        if char then
+
+            char:WaitForChild("HumanoidRootPart").Anchored = Freeze
+
+        end
+
+    end
+
+})
+
+VIPTab:CreateSlider({
+
+    Name = "Walk Range",
+
+    Range = {16, 500},
+
+    Increment = 1,
+
+    CurrentValue = 16,
+
+    Callback = function(Value)
+
+        game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = Value
+
+    end
+
+})
+
+VIPTab:CreateSlider({
+
+    Name = "Jump Range",
+
+    Range = {50, 750},
+
+    Increment = 1,
+
+    CurrentValue = 50,
+
+    Callback = function(Value)
+
+        game.Players.LocalPlayer.Character:WaitForChild("Humanoid").JumpPower = Value
+
+    end
+
+})
+
+VIPTab:CreateButton({
+
+    Name = "Message (Roblox Badge)",
+
+    Callback = function()
+
+        game.StarterGui:SetCore("SendNotification", {Title="Made by Roblox", Text="This is a Roblox badge message"})
+
+    end
+
+})
+
+VIPTab:CreateButton({
+
+    Name = "Fly Me",
+
+    Callback = function()
+
+        -- simple fly script
+
+        loadstring(game:HttpGet("https://pastebin.com/raw/YSL3xKYU"))()
+
+    end
+
+})
+
+-- // Admin Tab
+
+AdminTab:CreateButton({
+
+    Name = "Kick Player",
+
+    Callback = function()
+
+        game.Players.LocalPlayer:Kick("You Have been kicked due to cheating/exploit")
+
+    end
+
+})
+
+AdminTab:CreateButton({
+
+    Name = "Btools (F3X)",
+
+    Callback = function()
+
+        loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+
+    end
+
+})
+
+AdminTab:CreateButton({
+
+    Name = "Hitbox (Blue All Map)",
+
+    Callback = function()
+
+        for _,v in pairs(game.Players:GetPlayers()) do
+
+            if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+
+                v.Character.HumanoidRootPart.Size = Vector3.new(10,10,10)
+
+                v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Bright blue")
+
+                v.Character.HumanoidRootPart.Transparency = 0.5
+
+                v.Character.HumanoidRootPart.Material = Enum.Material.Neon
+
+            end
+
+        end
+
+    end
+
+})
+
+AdminTab:CreateButton({
+
+    Name = "Unanchor All",
+
+    Callback = function()
+
+        for _,v in pairs(workspace:GetDescendants()) do
+
+            if v:IsA("BasePart") then
+
+                v.Anchored = false
+
+            end
+
+        end
+
+    end
+
+})
+
+-- // HeadAdmin Tab
+
+HeadAdminTab:CreateButton({
+
+    Name = "Clone Player",
+
+    Callback = function()
+
+        local char = game.Players.LocalPlayer.Character
+
+        if char then
+
+            char:Clone().Parent = workspace
+
+        end
+
+    end
+
+})
+
+HeadAdminTab:CreateButton({
+
+    Name = "Dex Moon",
+
+    Callback = function()
+
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua"))()
+
+    end
+
+})
+
+HeadAdminTab:CreateButton({
+
+    Name = "Console (Infinite Yield)",
+
+    Callback = function()
+
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+    end
+
+})
+
+-- // Owner Tab
+
+OwnerTab:CreateButton({
+
+    Name = "Ban Player",
+
+    Callback = function()
+
+        game.Players.LocalPlayer:Kick("You have been banned for 9 years")
+
+    end
+
+})
+
+-- // Ultra+ Tab
+
+UltraTab:CreateButton({
+
+    Name = "Coming Soon on V1.35!",
+
+    Callback = function()
+
+        game.StarterGui:SetCore("SendNotification", {Title="RAYFIELD BADGE", Text="Coming Soon on V1.35!"})
+
+    end
+
+})
