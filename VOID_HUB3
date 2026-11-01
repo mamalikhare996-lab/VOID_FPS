@@ -13,7 +13,7 @@ local HUB_STATUS = "work"
 
 -- ═══ УСТАНОВКА ИСТОЧНИКА ДЛЯ RELOAD ═══
 if not _G.NesficateHubSource then
-    _G.NesficateHubSource = "https://raw.githubusercontent.com/mamalikhare996-lab/VOID_FPS/refs/heads/main/lua"
+    _G.NesficateHubSource = "https://rawscripts.net/raw/Universal-Script-7yd7-I-Emote-Script-48024"
 end
 
 pcall(function()
