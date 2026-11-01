@@ -13,7 +13,7 @@ local HUB_STATUS = "work"
 
 -- ═══ УСТАНОВКА ИСТОЧНИКА ДЛЯ RELOAD ═══
 if not _G.NesficateHubSource then
-    _G.NesficateHubSource = "https://raw.githubusercontent.com/mamalikhare996-lab/VOID_FPS/refs/heads/main/VOID_HUB3"
+    _G.NesficateHubSource = "https://raw.githubusercontent.com/mamalikhare996-lab/VOID_FPS/refs/heads/main/lua"
 end
 
 pcall(function()
